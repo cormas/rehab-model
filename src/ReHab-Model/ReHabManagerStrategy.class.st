@@ -1,22 +1,22 @@
 Class {
-	#name : #ReHabManager,
-	#superclass : #ReHabStrategyParkManager,
+	#name : #ReHabManagerStrategy,
+	#superclass : #ReHabParkManagerStrategy,
 	#category : #'ReHab-Model'
 }
 
 { #category : #accessing }
-ReHabManager class >> entityName [
+ReHabManagerStrategy class >> entityName [
 
 	^ 'Manager'
 ]
 
 { #category : #testing }
-ReHabManager class >> isAbstract [
+ReHabManagerStrategy class >> isAbstract [
 ^false
 ]
 
 { #category : #control }
-ReHabManager >> getLocations [
+ReHabManagerStrategy >> getLocations [
 	| corners centralZone edges others |
 	corners := #(1 5 16 20).
 	centralZone := self getReserveCentralZoneFrom: corners.
@@ -34,7 +34,7 @@ ReHabManager >> getLocations [
 ]
 
 { #category : #misc }
-ReHabManager >> getReserveAround: aZone [
+ReHabManagerStrategy >> getReserveAround: aZone [
 	| coll goodAround |
 	coll := OrderedCollection new.
 	coll add: aZone.
@@ -46,7 +46,7 @@ ReHabManager >> getReserveAround: aZone [
 ]
 
 { #category : #misc }
-ReHabManager >> getReserveCentralZoneFrom: aColl [
+ReHabManagerStrategy >> getReserveCentralZoneFrom: aColl [
 | goodLocations |
 
 	goodLocations := self holder zones

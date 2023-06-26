@@ -1,22 +1,22 @@
 Class {
-	#name : #ReHabCrusader,
-	#superclass : #ReHabStrategyParkManager,
+	#name : #ReHabCrusaderStrategy,
+	#superclass : #ReHabParkManagerStrategy,
 	#category : #'ReHab-Model'
 }
 
 { #category : #accessing }
-ReHabCrusader class >> entityName [ 
+ReHabCrusaderStrategy class >> entityName [ 
 
 	^ 'Crusader'
 ]
 
 { #category : #testing }
-ReHabCrusader class >> isAbstract [
+ReHabCrusaderStrategy class >> isAbstract [
 ^false
 ]
 
 { #category : #control }
-ReHabCrusader >> getLocations [
+ReHabCrusaderStrategy >> getLocations [
 | selection coll |
 
 	selection := OrderedCollection new.

@@ -1,11 +1,11 @@
 Class {
-	#name : #ReHabMaximizer,
-	#superclass : #ReHabStrategyFamily,
+	#name : #ReHabMaximizerStrategy,
+	#superclass : #ReHabFamilyStrategy,
 	#category : #'ReHab-Model'
 }
 
 { #category : #accessing }
-ReHabMaximizer >> possibleLocations [
+ReHabMaximizerStrategy >> possibleLocations [
 | maxBiomass |
 
 	maxBiomass := Cormas

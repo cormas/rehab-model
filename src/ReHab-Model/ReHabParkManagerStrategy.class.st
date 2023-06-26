@@ -1,5 +1,5 @@
 Class {
-	#name : #ReHabStrategyParkManager,
+	#name : #ReHabParkManagerStrategy,
 	#superclass : #ReHabStrategy,
 	#category : #'ReHab-Model'
 }

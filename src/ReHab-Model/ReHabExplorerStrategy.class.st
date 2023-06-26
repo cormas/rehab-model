@@ -1,10 +1,10 @@
 Class {
-	#name : #ReHabExplorer,
-	#superclass : #ReHabStrategyFamily,
+	#name : #ReHabExplorerStrategy,
+	#superclass : #ReHabFamilyStrategy,
 	#category : #'ReHab-Model'
 }
 
 { #category : #accessing }
-ReHabExplorer >> possibleLocations [
+ReHabExplorerStrategy >> possibleLocations [
 	^ super possibleLocations select: [ :z | z biomass isZero not ]
 ]
