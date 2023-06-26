@@ -222,7 +222,7 @@ ReHabZone >> allocateHarvests [
 	self updateNoHarvestPeriod.
 	self hasHarvesters 
 		ifTrue:
-			[harvesters := self randomizedHarvesters.
+			[harvesters := Cormas mix: self harvesters.
 			self biomass < self class maxBiomass
 				ifTrue: [harvesters first harvest: self biomass]
 				ifFalse:
@@ -292,12 +292,6 @@ ReHabZone >> noHarvestPeriod: anObject [
 ReHabZone >> numberOfHarvesters [
 
 	^self harvesters size
-]
-
-{ #category : #'accessing - occupants' }
-ReHabZone >> randomizedHarvesters [
-
-	^Cormas mix: self harvesters
 ]
 
 { #category : #dynamics }
