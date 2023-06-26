@@ -294,6 +294,16 @@ ReHabZone >> numberOfHarvesters [
 	^self harvesters size
 ]
 
+{ #category : #pov }
+ReHabZone >> povBiomass [
+
+	^ self
+		povAttribute: #biomass
+		min: self class minBiomass
+		max: self class maxBiomass
+		color: Color green
+]
+
 { #category : #dynamics }
 ReHabZone >> renewBiomass [
 	self hasHarvesters
