@@ -1,6 +1,8 @@
 Class {
 	#name : #ReHabBird,
-	#superclass : #CMLocatedAgent,
+	#superclass : #CMAgent,
+	#traits : 'TCMLocated',
+	#classTraits : 'TCMLocated classTrait',
 	#instVars : [
 		'testReproduction',
 		'mySpaceUnits',

@@ -1,6 +1,8 @@
 Class {
 	#name : #ReHabPlantHarvester,
-	#superclass : #CMLocatedAgent,
+	#superclass : #CMAgent,
+	#traits : 'TCMLocated',
+	#classTraits : 'TCMLocated classTrait',
 	#instVars : [
 		'label',
 		'harvest',
