@@ -84,10 +84,10 @@ ReHabBird >> pov [
 ReHabBird >> reproduce [
 | nbQuietNeighbours ratio newBorn chicks |
 	chicks := Set new.
-	self patch noHarvester
-		ifTrue:
+	self patch hasHarvesters
+		ifFalse:
 			[nbQuietNeighbours := (self patch neighbourhood
-				select: [:z | z noHarvester]) size.
+				reject: [:z | z hasHarvesters ]) size.
 			ratio := (nbQuietNeighbours / self patch neighbourhood size) asFloat.
 			ratio > 0.5
 				ifTrue:

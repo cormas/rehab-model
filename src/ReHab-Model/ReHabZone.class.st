@@ -220,8 +220,8 @@ ReHabZone >> access: anObject [
 ReHabZone >> allocateHarvests [
 | harvesters |
 	self updateNoHarvestPeriod.
-	self noHarvester
-		ifFalse:
+	self hasHarvesters 
+		ifTrue:
 			[harvesters := self randomizedHarvesters.
 			self biomass < self class maxBiomass
 				ifTrue: [harvesters first harvest: self biomass]
@@ -261,17 +261,17 @@ ReHabZone >> harvesters [
 	^self occupantsType: ReHabPlantHarvester
 ]
 
+{ #category : #'accessing - occupants' }
+ReHabZone >> hasHarvesters [
+
+	^ self numberOfHarvesters > 0
+]
+
 { #category : #dynamics }
 ReHabZone >> increaseBiomassBy: x [
 	self biomass + x > self class maxBiomass
 		ifTrue: [self biomass: self class maxBiomass]
 		ifFalse: [self biomass: self biomass + x]
-]
-
-{ #category : #'accessing - occupants' }
-ReHabZone >> nbHarvesters [
-
-	^self harvesters size
 ]
 
 { #category : #accessing }
@@ -289,8 +289,9 @@ ReHabZone >> noHarvestPeriod: anObject [
 ]
 
 { #category : #'accessing - occupants' }
-ReHabZone >> noHarvester [
-	^self nbHarvesters isZero
+ReHabZone >> numberOfHarvesters [
+
+	^self harvesters size
 ]
 
 { #category : #'accessing - occupants' }
@@ -301,16 +302,16 @@ ReHabZone >> randomizedHarvesters [
 
 { #category : #dynamics }
 ReHabZone >> renewBiomass [
-	self noHarvester
-		ifTrue:
+	self hasHarvesters
+		ifFalse:
 			[self noHarvestPeriod = 1 ifTrue: [self increaseBiomassBy: 1].
 			self noHarvestPeriod > 2 ifTrue: [self decreaseBiomassBy: 1]].
-	self nbHarvesters > 1 ifTrue: [self decreaseBiomassBy: self nbHarvesters].
+	self numberOfHarvesters > 1 ifTrue: [self decreaseBiomassBy: self numberOfHarvesters].
 ]
 
 { #category : #control }
 ReHabZone >> updateNoHarvestPeriod [
-	self noHarvester
-		ifTrue: [self noHarvestPeriod: self noHarvestPeriod + 1]
-		ifFalse: [self noHarvestPeriod: 0]
+	self hasHarvesters
+		ifFalse: [self noHarvestPeriod: self noHarvestPeriod + 1]
+		ifTrue: [self noHarvestPeriod: 0]
 ]
