@@ -4,6 +4,12 @@ Class {
 	#category : #'ReHab-Model'
 }
 
+{ #category : #accessing }
+ReHabManager class >> entityName [
+
+	^ 'Manager'
+]
+
 { #category : #testing }
 ReHabManager class >> isAbstract [
 ^false

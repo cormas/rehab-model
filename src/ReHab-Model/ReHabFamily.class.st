@@ -59,6 +59,12 @@ ReHabFamily class >> cumulatedHarvest_default [
 	^0
 ]
 
+{ #category : #accessing }
+ReHabFamily class >> entityName [
+
+	^ 'Family'
+]
+
 { #category : #'default value' }
 ReHabFamily class >> harvest_default [
 	"Return the default value of attribute #harvest : 0.

@@ -35,6 +35,12 @@ ReHabBird class >> defaultImage [
 ]
 
 { #category : #accessing }
+ReHabBird class >> entityName [ 
+
+	^ 'Bird'
+]
+
+{ #category : #accessing }
 ReHabBird class >> habitatSuitabilityThreshold [
 	"Getter accessor with default value = 2 "
 	^habitatSuitabilityThreshold ifNil:[habitatSuitabilityThreshold := 2]

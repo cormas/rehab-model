@@ -173,6 +173,12 @@ ReHabPlantHarvester class >> defaultImage [
 ^((self povDict keys includes: #ReHabPlantHarvester) ifTrue:[self povDict at:#ReHabPlantHarvester] ifFalse:[super defaultImage]) copy
 ]
 
+{ #category : #accessing }
+ReHabPlantHarvester class >> entityName [
+
+	^ 'PlantHarvester'
+]
+
 { #category : #'default value' }
 ReHabPlantHarvester class >> harvest_default [
 	"Return the default value of harvest attribute"

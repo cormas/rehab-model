@@ -4,6 +4,12 @@ Class {
 	#category : #'ReHab-Model'
 }
 
+{ #category : #accessing }
+ReHabCrusader class >> entityName [ 
+
+	^ 'Crusader'
+]
+
 { #category : #testing }
 ReHabCrusader class >> isAbstract [
 ^false

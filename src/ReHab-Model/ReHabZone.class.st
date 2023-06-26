@@ -88,6 +88,12 @@ ReHabZone class >> biomass_unit [
 	^ ''
 ]
 
+{ #category : #accessing }
+ReHabZone class >> entityName [
+
+	^ 'Zone'
+]
+
 { #category : #'default value' }
 ReHabZone class >> initialPlantBiomass_default [
 	"Return the default value of attribute #initialPlantBiomass : 0.

@@ -10,6 +10,12 @@ Class {
 	#category : #'ReHab-Model'
 }
 
+{ #category : #accessing }
+ReHabParkManager class >> entityName [
+
+	^ 'ParkManager'
+]
+
 { #category : #'default value' }
 ReHabParkManager class >> mySpaceUnits_default [
 	"Return the default value of mySpaceUnits attribute"
