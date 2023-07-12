@@ -9,12 +9,10 @@ Class {
 		'restrained',
 		'strategy_ParkManager',
 		'theBirds',
-		'theCrusaders',
 		'theParkManagers',
-		'thePlantHarvesters',
-		'theManagers',
 		'theFamilies',
-		'theZones'
+		'theCells',
+		'theHarvesters'
 	],
 	#category : #'ReHab-Model'
 }
