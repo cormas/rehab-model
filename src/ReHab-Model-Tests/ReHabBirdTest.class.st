@@ -15,7 +15,7 @@ ReHabBirdTest >> setUp [
 ]
 
 { #category : #tests }
-ReHabBirdTest >> testInitialStatus [
+ReHabBirdTest >> testNewBirdIsAdult [
 
-	self assert: bird status equals: #adult
+	self assert: bird isAdult
 ]

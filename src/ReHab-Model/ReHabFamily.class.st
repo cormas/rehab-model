@@ -180,7 +180,7 @@ ReHabFamily >> bringBackHomeMember: ph [
 		ifFalse:
 			[location := Cormas
 				selectRandomlyFrom:
-					(self home select: [:c | (c occupantsType: ReHabPlantHarvester) isEmpty]).
+					(self home select: [:c | (c occupantsType: ReHabHarvester) isEmpty]).
 			location isNil ifFalse: [ph moveTo: location]]
 ]
 
@@ -196,7 +196,7 @@ ReHabFamily >> bringMembersBackHome [
 					[:ph |
 					location := Cormas
 						selectRandomlyFrom:
-							(self home select: [:c | (c occupantsType: ReHabPlantHarvester) isEmpty]).
+							(self home select: [:c | (c occupantsType: ReHabHarvester) isEmpty]).
 					location isNil ifFalse: [ph moveTo: location]]]
 ]
 
